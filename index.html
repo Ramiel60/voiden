@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VOIDEN — 2026 AUTUMN COLLECTION</title>
+  <meta name="description" content="VOIDEN 2026 가을 컬렉션 — 신상품, 베스트, 룩북과 스타일 피드.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/intro.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/editorial.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <!-- Intro film: shown on entry, closed with X / HOME / Esc / end of film -->
+  <div class="intro" id="intro" role="dialog" aria-modal="true" aria-label="VOIDEN 2026 AUTUMN 광고 영상">
+    <video class="intro__video" src="media/voiden-ad-30s.mp4" autoplay muted playsinline preload="auto"></video>
+    <div class="intro__shade" aria-hidden="true"></div>
+    <div class="intro__bar">
+      <div class="intro__actions">
+        <button type="button" class="intro__btn" data-intro-sound aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4.5 4.5 0 0 1 0 6"/><path d="M18 6.5a8 8 0 0 1 0 11"/></svg>
+          <span data-label>SOUND OFF</span>
+        </button>
+        <button type="button" class="intro__btn" data-intro-home>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4l8 7"/><path d="M6 9.5V20h12V9.5"/><path d="M10 20v-5h4v5"/></svg>
+          <span>HOME</span>
+        </button>
+        <button type="button" class="intro__btn intro__btn--icon" data-intro-close aria-label="영상 닫기">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="intro__foot">
+      <img class="intro__logo" src="assets/svg/logo-voiden.svg" alt="VOIDEN" width="120" height="20">
+      <span class="intro__caption">2026 AUTUMN COLLECTION</span>
+      <div class="intro__progress" aria-hidden="true"><span></span></div>
+      <span class="intro__time">0:00 / 0:30</span>
+    </div>
+  </div>
+
+  <div class="page">
+        <!-- header (Figma 155:1094) — PC -->
+    <header class="header" id="header">
+      <div class="inner">
+        <div class="header-top">
+          <div class="header-left">
+            <h1 class="logo">
+              <a href="#main" data-home-link aria-label="VOIDEN 홈">
+                <img src="assets/icons/header/logo-voiden-dark.svg" alt="VOIDEN" width="132.648" height="22">
+              </a>
+            </h1>
+            <form class="search" role="search" action="#" method="get" data-header-search>
+              <label class="sr-only" for="header-search-input">상품 검색</label>
+              <div class="text-field">
+                <input class="text-body-xsm-regular" id="header-search-input" type="search" name="q" placeholder="이번 시즌 아우터를 찾아보세요" autocomplete="off">
+              </div>
+              <button type="submit" class="search-submit" aria-label="검색하기">
+                <img src="assets/icons/header/icon-search-micro.svg" alt="" width="20" height="20">
+              </button>
+            </form>
+          </div>
+          <ul class="util">
+            <li><a class="text-body-xsm-medium" href="#">고객센터</a></li>
+            <li><a class="text-body-xsm-medium" href="#">매장안내</a></li>
+          </ul>
+        </div>
+        <div class="header-bottom">
+          <nav class="gnb" aria-label="주 메뉴">
+            <ul class="gnb-main" data-tab-list>
+              <li><a class="tab text-body-sm-line-medium" href="#">여성</a></li>
+              <li><a class="tab text-body-sm-line-medium" href="#">남성</a></li>
+              <li><a class="tab text-body-sm-line-medium is-active" href="#" aria-current="true">아우터</a></li>
+              <li><a class="tab text-body-sm-line-medium" href="#">니트</a></li>
+              <li><a class="tab text-body-sm-line-medium" href="#">팬츠</a></li>
+              <li><a class="tab text-body-sm-line-medium" href="#">가방</a></li>
+            </ul>
+            <span class="divider" aria-hidden="true"></span>
+            <ul class="gnb-sub" data-tab-list>
+              <li><a class="tab text-body-sm-line-medium" href="#">NEW</a></li>
+              <li><a class="tab text-body-sm-line-medium" href="#">BEST</a></li>
+              <li><a class="tab text-body-sm-line-medium is-active" href="#" aria-current="true">룩북</a></li>
+              <li><a class="tab text-body-sm-line-medium" href="#">기획전</a></li>
+              <li><a class="tab text-body-sm-line-medium" href="#">이벤트</a></li>
+            </ul>
+          </nav>
+          <ul class="my-menu">
+            <li>
+              <a href="#" aria-label="로그인/마이페이지">
+                <img class="icon-person" src="assets/icons/header/icon-person.svg" alt="" width="24" height="24">
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="찜">
+                <img class="icon-heart" src="assets/icons/header/icon-heart.svg" alt="" width="24" height="24">
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="장바구니 (새 상품 있음)">
+                <img class="icon-cart" src="assets/icons/header/icon-cart.svg" alt="" width="24" height="24">
+              </a>
+            </li>
+            <li>
+              <button type="button" class="btn-search" aria-label="검색" aria-controls="header-search-input" data-header-search-toggle>
+                <img class="icon-search" src="assets/icons/header/icon-search.svg" alt="" width="24" height="24">
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      <!-- HERO · editorial look slider (Figma 45:728 section.hero). Slides are rendered by js/hero.js from window.VOIDEN_HERO_SLIDES. -->
+<section class="hero" id="hero" aria-label="2026 AUTUMN 룩북">
+  <div class="hero-swiper" tabindex="0" role="region" aria-roledescription="carousel" aria-label="VOIDEN 2026 AUTUMN 룩 18개 · 좌우 방향키로 이동">
+    <div class="swiper">
+      <ul class="swiper-wrapper" aria-live="off" data-hero-track></ul>
+    </div>
+
+    <button type="button" class="swiper-button-prev" aria-label="이전 룩" data-hero-prev>
+      <img src="assets/icons/hero/chevron-left.svg" width="72" height="72" alt="">
+    </button>
+    <button type="button" class="swiper-button-next" aria-label="다음 룩" data-hero-next>
+      <img src="assets/icons/hero/chevron-right.svg" width="72" height="72" alt="">
+    </button>
+
+    <p class="swiper-pagination" aria-hidden="true">
+      <span class="current text-body-md-semibold" data-hero-current>1</span>
+      <span class="slash text-body-md-regular">/</span>
+      <span class="total text-body-md-regular" data-hero-total>18</span>
+    </p>
+    <p class="sr-only" aria-live="polite" data-hero-status></p>
+
+    <!-- SVG alpha masks for the body silhouettes when the page is opened from file:// (CSS url(*.png) masks are CORS-blocked there) -->
+    <svg class="hero-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs data-hero-defs></defs></svg>
+  </div>
+</section>
+            <!-- section.inner.category (Figma 41:1824) -->
+      <section class="inner category" aria-labelledby="category-title">
+        <h2 class="sr-only" id="category-title">카테고리</h2>
+        <ul class="category-list">
+          <li class="category-item">
+            <a class="th-small" href="#"><img src="assets/img/cutout-1ccf6016.webp" width="96" height="90.42" alt="재킷" loading="lazy" decoding="async"></a>
+          </li>
+          <li class="category-item">
+            <a class="th-small" href="#"><img src="assets/img/cutout-faa263ff.webp" width="78.14" height="96" alt="코트" loading="lazy" decoding="async"></a>
+          </li>
+          <li class="category-item">
+            <a class="th-small" href="#"><img src="assets/img/cutout-6becdafa.webp" width="96" height="90.42" alt="카디건" loading="lazy" decoding="async"></a>
+          </li>
+          <li class="category-item">
+            <a class="th-small" href="#"><img src="assets/img/cutout-911da739.webp" width="96" height="90.42" alt="슬리브리스" loading="lazy" decoding="async"></a>
+          </li>
+          <li class="category-item">
+            <a class="th-small" href="#"><img src="assets/img/cutout-e09d288f.webp" width="96" height="90.42" alt="니트" loading="lazy" decoding="async"></a>
+          </li>
+          <li class="category-item">
+            <a class="th-small" href="#"><img src="assets/img/cutout-5dcbf3f8.webp" width="96" height="96" alt="셔츠" loading="lazy" decoding="async"></a>
+          </li>
+          <li class="category-item">
+            <a class="th-small" href="#"><img src="assets/img/cutout-9e1e2dcb.webp" width="69.21" height="96" alt="팬츠" loading="lazy" decoding="async"></a>
+          </li>
+          <li class="category-item">
+            <a class="th-small" href="#"><img src="assets/img/cutout-8b835d85.webp" width="45.77" height="96" alt="데님" loading="lazy" decoding="async"></a>
+          </li>
+          <li class="category-item">
+            <a class="th-small" href="#"><img src="assets/img/cutout-e2b4bfd5.webp" width="96" height="62.51" alt="가방" loading="lazy" decoding="async"></a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- section.inner.new-arrival (Figma 41:1825) -->
+      <section class="inner new-arrival" aria-labelledby="new-arrival-title">
+        <div class="title-tab">
+          <div class="title">
+            <h2 class="text-h2-semibold" id="new-arrival-title">NEW ARRIVAL</h2>
+            <p class="sub-title text-body-md-regular">이번 주 새로 들어온 신상 아이템</p>
+          </div>
+          <ul class="tab-list" role="tablist" aria-label="NEW ARRIVAL 카테고리" data-product-tabs>
+            <li role="presentation"><button type="button" class="tab text-body-sm-line-medium is-active" role="tab" id="new-arrival-tab-1" aria-selected="true" aria-controls="new-arrival-panel" tabindex="0">전체</button></li>
+            <li role="presentation"><button type="button" class="tab text-body-sm-line-medium" role="tab" id="new-arrival-tab-2" aria-selected="false" aria-controls="new-arrival-panel" tabindex="-1">아우터</button></li>
+            <li role="presentation"><button type="button" class="tab text-body-sm-line-medium" role="tab" id="new-arrival-tab-3" aria-selected="false" aria-controls="new-arrival-panel" tabindex="-1">재킷</button></li>
+            <li role="presentation"><button type="button" class="tab text-body-sm-line-medium" role="tab" id="new-arrival-tab-4" aria-selected="false" aria-controls="new-arrival-panel" tabindex="-1">코트</button></li>
+            <li role="presentation"><button type="button" class="tab text-body-sm-line-medium" role="tab" id="new-arrival-tab-5" aria-selected="false" aria-controls="new-arrival-panel" tabindex="-1">니트</button></li>
+            <li role="presentation"><button type="button" class="tab text-body-sm-line-medium" role="tab" id="new-arrival-tab-6" aria-selected="false" aria-controls="new-arrival-panel" tabindex="-1">팬츠</button></li>
+            <li role="presentation"><button type="button" class="tab text-body-sm-line-medium" role="tab" id="new-arrival-tab-7" aria-selected="false" aria-controls="new-arrival-panel" tabindex="-1">데님</button></li>
+            <li role="presentation"><button type="button" class="tab text-body-sm-line-medium" role="tab" id="new-arrival-tab-8" aria-selected="false" aria-controls="new-arrival-panel" tabindex="-1">가방</button></li>
+          </ul>
+        </div>
+        <div class="product-list-container" role="tabpanel" id="new-arrival-panel" aria-labelledby="new-arrival-tab-1">
+          <ul class="item-list">
+            <li class="product-item">
+              <div class="th-regular"><img src="assets/img/cutout-cbb02e4c.webp" width="144" height="127" alt="브라운 그레이 체크 울 재킷" loading="lazy" decoding="async"></div>
+              <div class="product-info">
+                <h3 class="name text-body-md-line-regular"><a href="#">브라운 그레이 체크 울 재킷</a></h3>
+                <div class="price-group">
+                  <span class="sale text-body-md-semibold"><span class="sr-only">할인율 </span>20%</span>
+                  <strong class="price text-body-md-bold"><span class="sr-only">판매가 </span>239,200원</strong>
+                </div>
+              </div>
+            </li>
+            <li class="product-item">
+              <div class="th-regular"><img src="assets/img/cutout-02a44d38.webp" width="142" height="144" alt="버건디 울 크롭 재킷" loading="lazy" decoding="async"></div>
+              <div class="product-info">
+                <h3 class="name text-body-md-line-regular"><a href="#">버건디 울 크롭 재킷</a></h3>
+                <div class="price-group">
+                  <span class="sale text-body-md-semibold"><span class="sr-only">할인율 </span>15%</span>
+                  <strong class="price text-body-md-bold"><span class="sr-only">판매가 </span>186,150원</strong>
+                </div>
+              </div>
+            </li>
+            <li class="product-item">
+              <div class="th-regular"><img src="assets/img/cutout-96041d16.webp" width="144" height="129" alt="오버핏 블랙 페이크 레더 재킷" loading="lazy" decoding="async"></div>
+              <div class="product-info">
+                <h3 class="name text-body-md-line-regular"><a href="#">오버핏 블랙 페이크 레더 재킷</a></h3>
+                <div class="price-group">
+                  <span class="sale text-body-md-semibold"><span class="sr-only">할인율 </span>10%</span>
+                  <strong class="price text-body-md-bold"><span class="sr-only">판매가 </span>278,100원</strong>
+                </div>
+              </div>
+            </li>
+            <li class="product-item">
+              <div class="th-regular"><img src="assets/img/cutout-2bc366f6.webp" width="144" height="107" alt="차이나 블랙 레더 숏 재킷" loading="lazy" decoding="async"></div>
+              <div class="product-info">
+                <h3 class="name text-body-md-line-regular"><a href="#">차이나 블랙 레더 숏 재킷</a></h3>
+                <div class="price-group">
+                  <span class="sale text-body-md-semibold"><span class="sr-only">할인율 </span>25%</span>
+                  <strong class="price text-body-md-bold"><span class="sr-only">판매가 </span>216,750원</strong>
+                </div>
+              </div>
+            </li>
+            <li class="product-item">
+              <div class="th-regular"><img src="assets/img/cutout-3cf62fad.webp" width="144" height="110" alt="블랙 벨벳 칼라 재킷" loading="lazy" decoding="async"></div>
+              <div class="product-info">
+                <h3 class="name text-body-md-line-regular"><a href="#">블랙 벨벳 칼라 재킷</a></h3>
+                <div class="price-group">
+                  <span class="sale text-body-md-semibold"><span class="sr-only">할인율 </span>10%</span>
+                  <strong class="price text-body-md-bold"><span class="sr-only">판매가 </span>197,100원</strong>
+                </div>
+              </div>
+            </li>
+            <li class="product-item">
+              <div class="th-regular"><img src="assets/img/cutout-b557317c.webp" width="144" height="131" alt="스웨이드 가죽 봄버 재킷" loading="lazy" decoding="async"></div>
+              <div class="product-info">
+                <h3 class="name text-body-md-line-regular"><a href="#">스웨이드 가죽 봄버 재킷</a></h3>
+                <div class="price-group">
+                  <span class="sale text-body-md-semibold"><span class="sr-only">할인율 </span>20%</span>
+                  <strong class="price text-body-md-bold"><span class="sr-only">판매가 </span>311,200원</strong>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- section.inner.best (Figma 41:1889) -->
+      <section class="inner best" aria-labelledby="best-title" data-best-swiper>
+        <div class="title-tab">
+          <div class="title">
+            <h2 class="text-h2-semibold" id="best-title">BEST</h2>
+            <p class="sub-title text-body-md-regular">지금 가장 많이 찾는 베스트 아이템</p>
+          </div>
+          <ul class="tab-list" role="tablist" aria-label="BEST 카테고리" data-product-tabs>
+            <li role="presentation"><button type="button" class="tab text-body-sm-line-medium is-active" role="tab" id="best-tab-1" aria-selected="true" aria-controls="best-panel" tabindex="0">전체</button></li>
+            <li role="presentation"><button type="button" class="tab text-body-sm-line-medium" role="tab" id="best-tab-2" aria-selected="false" aria-controls="best-panel" tabindex="-1">아우터</button></li>
+            <li role="presentation"><button type="button" class="tab text-body-sm-line-medium" role="tab" id="best-tab-3" aria-selected="false" aria-controls="best-panel" tabindex="-1">재킷</button></li>
+            <li role="presentation"><button type="button" class="tab text-body-sm-line-medium" role="tab" id="best-tab-4" aria-selected="false" aria-controls="best-panel" tabindex="-1">코트</button></li>
+            <li role="presentation"><button type="button" class="tab text-body-sm-line-medium" role="tab" id="best-tab-5" aria-selected="false" aria-controls="best-panel" tabindex="-1">니트</button></li>
+            <li role="presentation"><button type="button" class="tab text-body-sm-line-medium" role="tab" id="best-tab-6" aria-selected="false" aria-controls="best-panel" tabindex="-1">팬츠</button></li>
+            <li role="presentation"><button type="button" class="tab text-body-sm-line-medium" role="tab" id="best-tab-7" aria-selected="false" aria-controls="best-panel" tabindex="-1">데님</button></li>
+            <li role="presentation"><button type="button" class="tab text-body-sm-line-medium" role="tab" id="best-tab-8" aria-selected="false" aria-controls="best-panel" tabindex="-1">가방</button></li>
+          </ul>
+        </div>
+        <div class="swiper" role="tabpanel" id="best-panel" aria-labelledby="best-tab-1">
+          <ul class="swiper-wrapper" id="best-swiper-wrapper">
+            <li class="swiper-slide product-item">
+              <div class="th-medium">
+                <img src="assets/img/cutout-1ccf6016.webp" width="220" height="205" alt="다크 브라운 레더 봄버 재킷" loading="lazy">
+                <span class="rank rank--primary"><img src="assets/icons/products/badge-rank-primary.svg" width="28" height="30" alt=""><span class="rank-num text-body-xsm-regular"><span class="sr-only">베스트 </span>1<span class="sr-only">위</span></span></span>
+              </div>
+              <div class="product-info">
+                <h3 class="name text-body-md-line-regular"><a href="#">다크 브라운 레더 봄버 재킷</a></h3>
+                <div class="price-group">
+                  <span class="sale text-body-md-semibold"><span class="sr-only">할인율 </span>10%</span>
+                  <strong class="price text-body-md-bold"><span class="sr-only">판매가 </span>260,100원</strong>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide product-item">
+              <div class="th-medium">
+                <img src="assets/img/cutout-faa263ff.webp" width="178" height="220" alt="미니멀 네이비 울 오버코트" loading="lazy">
+                <span class="rank rank--primary"><img src="assets/icons/products/badge-rank-primary.svg" width="28" height="30" alt=""><span class="rank-num text-body-xsm-regular"><span class="sr-only">베스트 </span>2<span class="sr-only">위</span></span></span>
+              </div>
+              <div class="product-info">
+                <h3 class="name text-body-md-line-regular"><a href="#">미니멀 네이비 울 오버코트</a></h3>
+                <div class="price-group">
+                  <span class="sale text-body-md-semibold"><span class="sr-only">할인율 </span>15%</span>
+                  <strong class="price text-body-md-bold"><span class="sr-only">판매가 </span>279,650원</strong>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide product-item">
+              <div class="th-medium">
+                <img src="assets/img/cutout-6538c617.webp" width="127" height="220" alt="미니멀 토프 트렌치코트" loading="lazy">
+                <span class="rank rank--primary"><img src="assets/icons/products/badge-rank-primary.svg" width="28" height="30" alt=""><span class="rank-num text-body-xsm-regular"><span class="sr-only">베스트 </span>3<span class="sr-only">위</span></span></span>
+              </div>
+              <div class="product-info">
+                <h3 class="name text-body-md-line-regular"><a href="#">미니멀 토프 트렌치코트</a></h3>
+                <div class="price-group">
+                  <span class="sale text-body-md-semibold"><span class="sr-only">할인율 </span>10%</span>
+                  <strong class="price text-body-md-bold"><span class="sr-only">판매가 </span>251,100원</strong>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide product-item">
+              <div class="th-medium">
+                <img src="assets/img/cutout-6becdafa.webp" width="220" height="206" alt="네이비 캐시미어 카디건" loading="lazy">
+                <span class="rank rank--dark"><img src="assets/icons/products/badge-rank-dark.svg" width="28" height="30" alt=""><span class="rank-num text-body-xsm-regular"><span class="sr-only">베스트 </span>4<span class="sr-only">위</span></span></span>
+              </div>
+              <div class="product-info">
+                <h3 class="name text-body-md-line-regular"><a href="#">네이비 캐시미어 카디건</a></h3>
+                <div class="price-group">
+                  <span class="sale text-body-md-semibold"><span class="sr-only">할인율 </span>20%</span>
+                  <strong class="price text-body-md-bold"><span class="sr-only">판매가 </span>103,200원</strong>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide product-item">
+              <div class="th-medium">
+                <img src="assets/img/cutout-3023580e.webp" width="220" height="198" alt="다크 인디고 테일러드 데님 재킷" loading="lazy">
+                <span class="rank rank--dark"><img src="assets/icons/products/badge-rank-dark.svg" width="28" height="30" alt=""><span class="rank-num text-body-xsm-regular"><span class="sr-only">베스트 </span>5<span class="sr-only">위</span></span></span>
+              </div>
+              <div class="product-info">
+                <h3 class="name text-body-md-line-regular"><a href="#">다크 인디고 테일러드 데님 재킷</a></h3>
+                <div class="price-group">
+                  <span class="sale text-body-md-semibold"><span class="sr-only">할인율 </span>10%</span>
+                  <strong class="price text-body-md-bold"><span class="sr-only">판매가 </span>170,100원</strong>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide product-item">
+              <div class="th-medium">
+                <img src="assets/img/cutout-f5fb718c.webp" width="220" height="207" alt="딥 브라운 하이넥 울 재킷" loading="lazy">
+                <span class="rank rank--dark"><img src="assets/icons/products/badge-rank-dark.svg" width="28" height="30" alt=""><span class="rank-num text-body-xsm-regular"><span class="sr-only">베스트 </span>6<span class="sr-only">위</span></span></span>
+              </div>
+              <div class="product-info">
+                <h3 class="name text-body-md-line-regular"><a href="#">딥 브라운 하이넥 울 재킷</a></h3>
+                <div class="price-group">
+                  <span class="sale text-body-md-semibold"><span class="sr-only">할인율 </span>15%</span>
+                  <strong class="price text-body-md-bold"><span class="sr-only">판매가 </span>203,150원</strong>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide product-item">
+              <div class="th-medium">
+                <img src="assets/img/cutout-d07c9605.webp" width="220" height="199" alt="미니멀 브라운 워크웨어 재킷" loading="lazy">
+                <span class="rank rank--dark"><img src="assets/icons/products/badge-rank-dark.svg" width="28" height="30" alt=""><span class="rank-num text-body-xsm-regular"><span class="sr-only">베스트 </span>7<span class="sr-only">위</span></span></span>
+              </div>
+              <div class="product-info">
+                <h3 class="name text-body-md-line-regular"><a href="#">미니멀 브라운 워크웨어 재킷</a></h3>
+                <div class="price-group">
+                  <span class="sale text-body-md-semibold"><span class="sr-only">할인율 </span>10%</span>
+                  <strong class="price text-body-md-bold"><span class="sr-only">판매가 </span>197,100원</strong>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide product-item">
+              <div class="th-medium">
+                <img src="assets/img/cutout-e3bb0875.webp" width="220" height="218" alt="갈색 얼룩무늬 니트 가디건" loading="lazy">
+                <span class="rank rank--dark"><img src="assets/icons/products/badge-rank-dark.svg" width="28" height="30" alt=""><span class="rank-num text-body-xsm-regular"><span class="sr-only">베스트 </span>8<span class="sr-only">위</span></span></span>
+              </div>
+              <div class="product-info">
+                <h3 class="name text-body-md-line-regular"><a href="#">갈색 얼룩무늬 니트 가디건</a></h3>
+                <div class="price-group">
+                  <span class="sale text-body-md-semibold"><span class="sr-only">할인율 </span>20%</span>
+                  <strong class="price text-body-md-bold"><span class="sr-only">판매가 </span>111,200원</strong>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="swiper-controls">
+          <div class="swiper-progress" aria-hidden="true"><span class="bar"></span></div>
+          <p class="swiper-pagination" aria-live="polite">
+            <span class="sr-only">페이지 </span><span class="current text-body-sm-semibold">1</span><span class="slash text-body-sm-regular" aria-hidden="true">/</span><span class="sr-only">전체 </span><span class="total text-body-sm-regular">2</span>
+          </p>
+          <button type="button" class="swiper-button-prev" aria-label="이전 베스트 상품" aria-controls="best-swiper-wrapper" aria-disabled="true">
+            <img class="is-default" src="assets/icons/products/btn-prev-default.svg" width="34" height="34" alt="">
+            <img class="is-hover" src="assets/icons/products/btn-prev-hover.svg" width="54" height="54" alt="">
+            <img class="is-focus" src="assets/icons/products/btn-prev-focus.svg" width="40" height="40" alt="">
+            <img class="is-disabled" src="assets/icons/products/btn-prev-disabled.svg" width="34" height="34" alt="">
+          </button>
+          <button type="button" class="swiper-button-next" aria-label="다음 베스트 상품" aria-controls="best-swiper-wrapper">
+            <img class="is-default" src="assets/icons/products/btn-next-default.svg" width="34" height="34" alt="">
+            <img class="is-hover" src="assets/icons/products/btn-next-hover.svg" width="54" height="54" alt="">
+            <img class="is-focus" src="assets/icons/products/btn-next-focus.svg" width="40" height="40" alt="">
+            <img class="is-disabled" src="assets/icons/products/btn-next-disabled.svg" width="34" height="34" alt="">
+          </button>
+        </div>
+      </section>
+            <!-- section.inner.promotion (Figma 41:1939) -->
+      <section class="inner promotion" aria-labelledby="promotion-title">
+        <div class="title-tab">
+          <div class="title">
+            <h2 class="text-h2-semibold" id="promotion-title">PROMOTION</h2>
+            <p class="sub-title text-body-md-regular">기간 한정으로 만나는 시즌 기획전</p>
+          </div>
+        </div>
+        <div class="promotion-list">
+          <ul class="item-list">
+            <li class="promotion-item">
+              <div class="th-large">
+                <img src="assets/img/photo-41b713a2.webp" width="588" height="735" alt="토프 브라운 울 코트에 그레이 니트와 연청 데님을 매치한 남성 모델" loading="lazy" decoding="async">
+                <span class="badge text-body-sm-regular">30% OFF</span>
+              </div>
+              <div class="product-info">
+                <h3 class="name text-body-md-line-regular"><a href="#">토프 브라운 울 코트 기획전</a></h3>
+                <p class="period text-body-sm-regular"><span class="sr-only">기간 </span>10.13 – 10.31</p>
+                <div class="price-group">
+                  <span class="sale text-body-md-bold"><span class="sr-only">할인율 </span>30%</span>
+                  <strong class="price text-body-md-bold"><span class="sr-only">판매가 </span>230,300원~</strong>
+                </div>
+              </div>
+            </li>
+            <li class="promotion-item">
+              <div class="th-large">
+                <img src="assets/img/photo-87b97470.webp" width="588" height="784" alt="레드 하이넥 울 크롭 재킷에 데님 팬츠를 매치한 여성 모델" loading="lazy" decoding="async">
+                <span class="badge text-body-sm-regular">25% OFF</span>
+              </div>
+              <div class="product-info">
+                <h3 class="name text-body-md-line-regular"><a href="#">하이넥 울 크롭 재킷 기획전</a></h3>
+                <p class="period text-body-sm-regular"><span class="sr-only">기간 </span>10.13 – 10.31</p>
+                <div class="price-group">
+                  <span class="sale text-body-md-bold"><span class="sr-only">할인율 </span>25%</span>
+                  <strong class="price text-body-md-bold"><span class="sr-only">판매가 </span>164,250원~</strong>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- section.lookbook (Figma 58:768) — full-bleed tint + .inner -->
+      <section class="lookbook" aria-labelledby="lookbook-title">
+        <div class="inner">
+          <div class="title">
+            <h2 class="text-h2-semibold" id="lookbook-title">LOOKBOOK</h2>
+            <p class="sub-title text-body-md-regular">에디터가 고른 이번 주 스타일링</p>
+          </div>
+          <div class="lookbook-content">
+            <a class="th-large" href="#">
+              <img src="assets/img/photo-6747e860.webp" width="588" height="882" alt="LOOK 08 딥 브라운 하이넥 울 재킷 룩 — 버건디 스트라이프 니트, 블랙 와이드 팬츠, 블랙 레더 핸드백" loading="lazy" decoding="async">
+            </a>
+            <div class="lookbook-info">
+              <p class="label text-body-md-semibold">LOOK 08</p>
+              <h3 class="title text-h1-bold">딥 브라운 하이넥 울 재킷</h3>
+              <p class="desc text-body-md-line-regular">버건디 스트라이프 니트와 블랙 와이드 팬츠를 더한 하이넥 울 재킷 룩. 단정한 실루엣에 블랙 레더 핸드백으로 무게를 잡았습니다.</p>
+              <ul class="item-list" aria-label="LOOK 08 착용 상품">
+                <li class="item">
+                  <div class="th-small"><img src="assets/img/cutout-e09d288f.webp" width="108" height="101" alt="" loading="lazy" decoding="async"></div>
+                  <p class="name text-body-sm-regular"><a href="#">버건디 스트라이프 니트</a></p>
+                  <strong class="price text-body-sm-bold"><span class="sr-only">판매가 </span>89,000원</strong>
+                </li>
+                <li class="item">
+                  <div class="th-small"><img src="assets/img/cutout-b8586b0d.webp" width="64" height="108" alt="" loading="lazy" decoding="async"></div>
+                  <p class="name text-body-sm-regular"><a href="#">블랙 와이드 팬츠</a></p>
+                  <strong class="price text-body-sm-bold"><span class="sr-only">판매가 </span>79,000원</strong>
+                </li>
+                <li class="item">
+                  <div class="th-small"><img src="assets/img/cutout-f5fb718c.webp" width="108" height="102" alt="" loading="lazy" decoding="async"></div>
+                  <p class="name text-body-sm-regular"><a href="#">딥 브라운 울 재킷</a></p>
+                  <strong class="price text-body-sm-bold"><span class="sr-only">판매가 </span>239,000원</strong>
+                </li>
+                <li class="item">
+                  <div class="th-small"><img src="assets/img/cutout-ff1f5a02.webp" width="106" height="108" alt="" loading="lazy" decoding="async"></div>
+                  <p class="name text-body-sm-regular"><a href="#">블랙 레더 핸드백</a></p>
+                  <strong class="price text-body-sm-bold"><span class="sr-only">판매가 </span>129,000원</strong>
+                </li>
+              </ul>
+              <a class="more" href="#">
+                <span class="text-body-md-line-regular">룩 상품 전체 보기</span>
+                <img src="assets/icons/editorial/chevron-18-right.svg" width="18" height="18" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- section.inner.style-feed (Figma 58:770) -->
+      <section class="inner style-feed" aria-labelledby="style-feed-title">
+        <div class="title">
+          <h2 class="text-h2-semibold" id="style-feed-title">#VOIDEN STYLE</h2>
+          <p class="sub-title text-body-md-regular">보이든과 함께한 이번 시즌 데일리 룩</p>
+        </div>
+        <ul class="feed-list">
+          <li class="feed-item">
+            <a class="th-medium" href="#"><img src="assets/img/photo-7cfa2a0c.webp" width="282" height="423" alt="블루 니트 폴로와 워시드 진을 입은 남성 데일리 룩" loading="lazy" decoding="async"></a>
+            <p class="tag text-body-sm-medium">#블루니트폴로 #워시드진</p>
+          </li>
+          <li class="feed-item">
+            <a class="th-medium" href="#"><img src="assets/img/photo-b75d9efc.webp" width="282" height="423" alt="토프 트렌치코트와 화이트 와이드 팬츠를 입은 여성 데일리 룩" loading="lazy" decoding="async"></a>
+            <p class="tag text-body-sm-medium">#토프트렌치 #와이드팬츠</p>
+          </li>
+          <li class="feed-item">
+            <a class="th-medium" href="#"><img src="assets/img/photo-df3128ec.webp" width="282" height="423" alt="체크 재킷과 그레이 벌룬 팬츠를 입은 여성 데일리 룩" loading="lazy" decoding="async"></a>
+            <p class="tag text-body-sm-medium">#체크재킷 #벌룬팬츠</p>
+          </li>
+          <li class="feed-item">
+            <a class="th-medium" href="#"><img src="assets/img/photo-cb1cbcaf.webp" width="282" height="423" alt="네이비 캐시미어 카디건과 연청 데님을 입은 여성 데일리 룩" loading="lazy" decoding="async"></a>
+            <p class="tag text-body-sm-medium">#캐시미어카디건 #데일리룩</p>
+          </li>
+        </ul>
+        <a class="more" href="#">
+          <span class="text-body-md-line-regular">스타일 피드 더보기</span>
+          <img src="assets/icons/editorial/chevron-18-right.svg" width="18" height="18" alt="">
+        </a>
+      </section>
+            <!-- section.benefit (Figma 58:771) — full-bleed band, .inner 1200 -->
+      <section class="benefit" aria-labelledby="benefit-title">
+        <div class="inner">
+          <h2 class="sr-only" id="benefit-title">쇼핑 혜택 안내</h2>
+          <ul class="benefit-list">
+            <li class="benefit-item">
+              <div class="icon" aria-hidden="true">
+                <img src="assets/icons/footer/icon-local-mall.svg" alt="" width="24" height="24">
+              </div>
+              <div class="benefit-text">
+                <strong class="title text-body-md-semibold">무료 배송</strong>
+                <p class="desc text-body-sm-regular">5만 원 이상 구매 시</p>
+              </div>
+            </li>
+            <li class="benefit-item">
+              <div class="icon" aria-hidden="true">
+                <img src="assets/icons/footer/icon-gift.svg" alt="" width="24" height="24">
+              </div>
+              <div class="benefit-text">
+                <strong class="title text-body-md-semibold">신규 회원 혜택</strong>
+                <p class="desc text-body-sm-regular">첫 구매 10% 할인 쿠폰</p>
+              </div>
+            </li>
+            <li class="benefit-item">
+              <div class="icon" aria-hidden="true">
+                <img src="assets/icons/footer/icon-replay.svg" alt="" width="24" height="24">
+              </div>
+              <div class="benefit-text">
+                <strong class="title text-body-md-semibold">무료 교환·반품</strong>
+                <p class="desc text-body-sm-regular">상품 수령 후 7일 이내</p>
+              </div>
+            </li>
+            <li class="benefit-item">
+              <div class="icon" aria-hidden="true">
+                <img src="assets/icons/footer/icon-support.svg" alt="" width="24" height="24">
+              </div>
+              <div class="benefit-text">
+                <strong class="title text-body-md-semibold">고객센터</strong>
+                <p class="desc text-body-sm-regular">평일 10:00 – 17:00</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+        <!-- footer (Figma 146:1757) — full-bleed dark band, .inner 1200 -->
+    <footer class="footer" id="footer">
+      <div class="inner">
+        <div class="footer-top">
+          <div class="footer-logo">
+            <a href="#main" aria-label="VOIDEN 홈">
+              <img src="assets/svg/logo-voiden.svg" alt="VOIDEN" width="132.648" height="22">
+            </a>
+          </div>
+          <nav aria-label="푸터 메뉴">
+            <ul class="footer-menu">
+              <li><a class="text-body-sm-regular" href="#">회사소개</a></li>
+              <li><a class="text-body-sm-regular" href="#">이용약관</a></li>
+              <li><a class="is-emphasis text-body-sm-semibold" href="#">개인정보처리방침</a></li>
+              <li><a class="text-body-sm-regular" href="#">이용안내</a></li>
+              <li><a class="text-body-sm-regular" href="#">제휴문의</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer-main">
+          <address class="footer-info">
+            <p class="text-body-sm-regular">상호 (주)보이든 | 대표 000 | 사업자등록번호 000-00-00000</p>
+            <p class="text-body-sm-regular">통신판매업신고 제0000-서울00-0000호 | 주소 서울특별시 00구 00로 00</p>
+            <p class="text-body-sm-regular">이메일 <a href="mailto:help@voiden.example">help@voiden.example</a> | 개인정보보호책임자 000</p>
+          </address>
+          <div class="footer-cs">
+            <p class="title text-body-md-semibold">고객센터</p>
+            <strong class="tel text-h1-bold"><a href="tel:1588-0000" aria-label="고객센터 전화 1588-0000">1588-0000</a></strong>
+            <p class="text-body-sm-regular">평일 10:00 – 17:00 (점심 12:00 – 13:00)</p>
+            <p class="text-body-sm-regular">주말 · 공휴일 휴무</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright text-body-xsm-regular">© 2026 VOIDEN. All rights reserved.</p>
+          <nav aria-label="VOIDEN 소셜 미디어">
+            <ul class="footer-sns">
+              <li>
+                <a class="sns-youtube" href="#" aria-label="유튜브">
+                  <img class="icon-youtube" src="assets/icons/footer/icon-youtube.svg" alt="" width="20" height="20">
+                </a>
+              </li>
+              <li>
+                <a class="sns-instagram" href="#" aria-label="인스타그램">
+                  <img class="icon-instagram" src="assets/icons/footer/icon-instagram.svg" alt="" width="20" height="20">
+                </a>
+              </li>
+              <li>
+                <a class="sns-facebook" href="#" aria-label="페이스북">
+                  <img class="icon-facebook" src="assets/icons/footer/icon-facebook.svg" alt="" width="20" height="20">
+                </a>
+              </li>
+              <li>
+                <a class="sns-x" href="#" aria-label="X(트위터)">
+                  <img class="icon-x" src="assets/icons/footer/icon-x.svg" alt="" width="20" height="20">
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/intro.js"></script>
+  <script src="js/hero-data.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/editorial.js"></script>
+</body>
+</html>

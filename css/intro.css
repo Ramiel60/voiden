@@ -1,0 +1,71 @@
+/* Intro film — full-screen ad shown on entry, closed with X / HOME / end of film */
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: var(--gray-1200);
+  color: var(--on-color-text);
+  transition: opacity 0.7s ease, visibility 0.7s ease, transform 0.7s ease;
+}
+.intro.is-closing { opacity: 0; transform: scale(1.04); }
+.intro[hidden] { display: none; }
+
+.intro__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.intro__shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 22%, rgba(0, 0, 0, 0) 72%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+.intro__bar {
+  position: absolute;
+  inset: var(--scale-40) var(--scale-56) auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.intro__logo { width: 120px; height: auto; flex: none; }
+.intro__actions { display: flex; gap: var(--scale-12); }
+
+/* frosted round buttons — same treatment as hero swiper buttons */
+.intro__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--scale-8);
+  height: 56px;
+  min-width: 56px;
+  padding: 0 var(--scale-18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  color: var(--gray-0);
+  font-size: var(--body-small);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.intro__btn:hover { background: rgba(255, 255, 255, 0.45); }
+.intro__btn:active { transform: scale(0.96); }
+.intro__btn--icon { padding: 0; width: 56px; }
+.intro__btn svg { width: 22px; height: 22px; flex: none; }
+
+.intro__foot {
+  position: absolute;
+  inset: auto var(--scale-56) var(--scale-40);
+  display: flex;
+  align-items: center;
+  gap: var(--scale-24);
+}
+.intro__caption { font-size: var(--caption-large); font-weight: 600; letter-spacing: 0.3em; white-space: nowrap; opacity: 0.85; }
+.intro__progress { position: relative; flex: 1; height: 2px; background: rgba(255, 255, 255, 0.3); overflow: hidden; }
+.intro__progress span { position: absolute; inset: 0 auto 0 0; width: 0; background: var(--gray-0); }
+.intro__time { font-size: var(--caption-large); font-variant-numeric: tabular-nums; opacity: 0.85; }

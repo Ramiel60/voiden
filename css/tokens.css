@@ -1,0 +1,118 @@
+/* VOIDEN design tokens — mirrors Figma variables (voiden-disgin-system), PC mode.
+   Names follow each variable's WEB code syntax, e.g. var(--color-primary). */
+:root {
+  /* primitive · gray */
+  --gray-0: #ffffff;
+  --gray-100: #fafafa;
+  --gray-150: #f5f5f5;
+  --gray-200: #f2f2f2;
+  --gray-300: #e2e2e2;
+  --gray-400: #d1d1d1;
+  --gray-500: #bbbbbb;
+  --gray-600: #999999;
+  --gray-700: #5a5959;
+  --gray-800: #454545;
+  --gray-900: #3f3f3f;
+  --gray-1000: #2a2a2a;
+  --gray-1100: #1a1a1a;
+  --gray-1200: #000000;
+
+  /* primitive · main (brand purple) */
+  --main-50: #f3f0ff;
+  --main-100: #ebe4ff;
+  --main-200: #d8cdff;
+  --main-300: #bda6ff;
+  --main-400: #9e73ff;
+  --main-500: #813bff;
+  --main-600: #7714ff;
+  --main-700: #7100ff;
+  --main-800: #5f01d6;
+  --main-900: #5003af;
+  --main-950: #300077;
+  --logo: #1d1d1b;
+
+  /* primitive · scale */
+  --scale-0: 0px;
+  --scale-1: 1px;
+  --scale-2: 2px;
+  --scale-4: 4px;
+  --scale-6: 6px;
+  --scale-8: 8px;
+  --scale-10: 10px;
+  --scale-12: 12px;
+  --scale-16: 16px;
+  --scale-18: 18px;
+  --scale-20: 20px;
+  --scale-24: 24px;
+  --scale-28: 28px;
+  --scale-32: 32px;
+  --scale-36: 36px;
+  --scale-40: 40px;
+  --scale-48: 48px;
+  --scale-56: 56px;
+  --scale-64: 64px;
+  --scale-72: 72px;
+  --scale-96: 96px;
+  --scale-128: 128px;
+  --scale-256: 256px;
+  --scale-512: 512px;
+  --scale-1024: 1024px;
+
+  /* primitive · font size (PC) */
+  --title-h1: 30px;
+  --title-h2: 24px;
+  --title-h3: 20px;
+  --title-h4: 18px;
+  --body-large: 17px;
+  --body-medium: 16px;
+  --body-small: 15px;
+  --body-x-small: 14px;
+  --caption-large: 13px;
+  --caption-medium: 12px;
+  --caption-small: 11px;
+  --caption-x-small: 10px;
+
+  /* primitive · layout (PC) */
+  --layout-width: 1920px;
+  --layout-inner: 1200px;
+  --layout-margin: 0px;
+
+  /* semantic */
+  --color-primary: var(--main-700);
+  --color-secondary: var(--main-100);
+  --color-accent: var(--main-600);
+  --body-default: var(--gray-1000);
+  --body-description: var(--gray-600);
+  --body-cost: var(--gray-500);
+  --body-link: var(--gray-700);
+  --body-placeholder: var(--gray-600);
+  --body-rate: var(--color-accent);
+  --icon-default: var(--gray-1000);
+  --icon-dimmed: var(--gray-600);
+  --icon-hover: var(--gray-1100);
+  --icon-disabled: var(--gray-400);
+  --icon-white: var(--gray-0);
+  --state-warn: var(--main-600);
+  --state-disabled: var(--gray-200);
+  --state-update: var(--color-primary);
+  --on-color-description: var(--gray-700);
+  --on-color-dim: var(--gray-0);
+  --on-color-text: var(--gray-0);
+  --surface-white: var(--gray-0);
+  --surface-subtle: var(--gray-150);
+  --surface-tab-active: var(--gray-1000);
+  --surface-dark: var(--gray-800);
+  --surface-overlay: rgba(0, 0, 0, 0.2);
+  --border-default: var(--gray-300);
+  --border-hover: var(--gray-600);
+  --button-fill-hover: var(--gray-100);
+  --button-fill-select: var(--gray-800);
+  --button-stroke-disabled-icon: var(--gray-600);
+  --button-stroke-focus: var(--gray-800);
+  --button-stroke-select: var(--gray-800);
+
+  /* type */
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-display: "Anton", "Pretendard Variable", sans-serif;
+  --letter-spacing-base: -0.38px;
+}

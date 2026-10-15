@@ -1,0 +1,319 @@
+/* Product sections — Figma main 58:767:
+   section.inner.category (41:1824), section.inner.new-arrival (41:1825), section.inner.best (41:1889).
+   Width 1200 + centering come from .inner (base.css). */
+
+/* =========================================================
+   section.inner.category — 9 tiles, space-between, pb 96
+   ========================================================= */
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: var(--scale-96);
+}
+.category .category-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+.category .category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--scale-12);
+  flex-shrink: 0;
+}
+/* .th-small — 120 x 120, radius scale/8, surface/subtle */
+.category .th-small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: var(--scale-8);
+  background: var(--surface-subtle);
+}
+/* Figma image fill = FILL (cover) on an "img" box sized per item (max 96 = 80% of the tile) */
+.category .th-small img {
+  flex-shrink: 0;
+  max-width: none;
+  object-fit: cover;
+}
+
+/* =========================================================
+   Shared: new-arrival + best section shell and .title-tab
+   ========================================================= */
+.new-arrival,
+.best {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--scale-24);
+  padding-bottom: var(--scale-128);
+}
+.new-arrival { background: var(--surface-white); }
+
+:is(.new-arrival, .best) .title-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--scale-24);
+}
+:is(.new-arrival, .best) .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--scale-8);
+  white-space: nowrap;
+}
+:is(.new-arrival, .best) .title h2 { color: var(--body-default); }
+:is(.new-arrival, .best) .sub-title { color: var(--body-description); }
+
+/* ul.tab-list — tab instances, 29px apart */
+:is(.new-arrival, .best) .tab-list {
+  display: flex;
+  align-items: center;
+  gap: 29px;
+}
+/* tab — state=default / state=active (2px bottom stroke drawn inside, not part of layout) */
+:is(.new-arrival, .best) .tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 26px; /* Figma tab box: 23px text row + 3px bottom padding */
+  padding-bottom: 3px;
+  color: var(--body-description);
+  white-space: nowrap;
+  box-shadow: inset 0 calc(-1 * var(--scale-2)) 0 transparent;
+  transition: color 0.2s ease, box-shadow 0.2s ease;
+}
+:is(.new-arrival, .best) .tab:hover { color: var(--body-default); }
+:is(.new-arrival, .best) .tab.is-active,
+:is(.new-arrival, .best) .tab[aria-selected="true"] {
+  color: var(--body-default);
+  box-shadow: inset 0 calc(-1 * var(--scale-2)) 0 var(--button-stroke-focus);
+}
+
+/* =========================================================
+   Shared: product card (li.product-item)
+   ========================================================= */
+:is(.new-arrival, .best) .product-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+}
+:is(.new-arrival, .best) .product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+:is(.new-arrival, .best) .name {
+  width: 100%;
+  color: var(--body-default);
+}
+/* h3.name link covers the whole card (image + info) */
+:is(.new-arrival, .best) .name a { color: inherit; }
+:is(.new-arrival, .best) .name a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+/* keyboard focus: ring on the image tile (inside, so the clipped swiper can't cut it off);
+   browsers without :has() keep base.css's outline on the link text */
+@supports selector(:has(*)) {
+  :is(.new-arrival, .best) .name a:focus-visible { outline: none; }
+  :is(.new-arrival, .best) .product-item:has(.name a:focus-visible) :is(.th-regular, .th-medium) {
+    outline: 2px solid var(--color-primary);
+    outline-offset: -2px;
+  }
+}
+:is(.new-arrival, .best) .price-group {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--scale-8);
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+:is(.new-arrival, .best) .sale { color: var(--color-primary); }
+:is(.new-arrival, .best) .price { color: var(--body-default); }
+
+/* Figma image fill = FILL (cover) on an "img" box centred in the tile */
+:is(.new-arrival, .best) :is(.th-regular, .th-medium) > img {
+  flex-shrink: 0;
+  max-width: none;
+  object-fit: cover;
+}
+
+/* =========================================================
+   section.inner.new-arrival — 6 x 180 cards, gap 24
+   ========================================================= */
+.new-arrival .product-list-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+.new-arrival .item-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+  column-gap: var(--scale-24);
+  row-gap: 0;
+  width: 100%;
+}
+.new-arrival .product-item { width: 180px; }
+/* .th-regular — 180 x 180, radius scale/12 */
+.new-arrival .th-regular {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: var(--scale-12);
+  background: var(--surface-subtle);
+}
+
+/* =========================================================
+   section.inner.best — swiper: 4 of 8 cards (282, gap 24) per view
+   ========================================================= */
+.best .swiper {
+  width: 100%;
+  overflow: hidden;
+  overflow: clip; /* focus can't scroll the viewport; JS pages to the focused slide instead */
+}
+.best .swiper-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--scale-24);
+  width: max-content;
+  transform: translateX(0);
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.best .product-item { width: 282px; }
+/* .th-medium — 282 x 282, radius scale/16 */
+.best .th-medium {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 282px;
+  height: 282px;
+  overflow: hidden;
+  border-radius: var(--scale-16);
+  background: var(--surface-subtle);
+}
+/* span.rank — badge size=small, type=rank (bookmark 28 x 30), left 16 / top 0 */
+.best .rank {
+  position: absolute;
+  top: 0;
+  left: var(--scale-16);
+  z-index: 1;
+  width: 28px;
+  height: 30px;
+}
+.best .rank img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.best .rank-num {
+  position: absolute;
+  top: calc(50% - 13px);
+  left: calc(50% + 0.5px);
+  transform: translateX(-50%);
+  color: var(--on-color-text);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* .swiper-controls — progress track, "1 / 2", prev / next */
+.best .swiper-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--scale-16);
+  width: 100%;
+}
+/* track higth=2 — 220 x 2, 10% black, bar = surface/dark */
+.best .swiper-progress {
+  position: relative;
+  flex-shrink: 0;
+  width: 220px;
+  height: 2px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.best .swiper-progress .bar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  border-radius: 10px;
+  background: var(--surface-dark);
+  transform: translateY(-50%);
+  transition: width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+/* faction size=sm, type=text */
+.best .swiper-pagination {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+.best .swiper-pagination .current { color: var(--body-default); text-align: right; }
+.best .swiper-pagination .slash { color: var(--body-link); text-align: center; }
+.best .swiper-pagination .total { color: var(--body-link); text-align: right; }
+
+/* button.swiper-button-prev / -next — "Component 19" size=medium, type=circle.
+   Each state is the exported variant SVG: default 34, hover 54 (shadow), focus 40 (ring), disabled 34. */
+.best :is(.swiper-button-prev, .swiper-button-next) {
+  position: relative;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+.best :is(.swiper-button-prev, .swiper-button-next) img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.best :is(.swiper-button-prev, .swiper-button-next) .is-hover { top: -10px; left: -10px; }
+.best :is(.swiper-button-prev, .swiper-button-next) .is-focus { top: -3px; left: -3px; }
+.best :is(.swiper-button-prev, .swiper-button-next) .is-default { opacity: 1; }
+
+.best :is(.swiper-button-prev, .swiper-button-next):not([aria-disabled="true"]):hover .is-default { opacity: 0; }
+.best :is(.swiper-button-prev, .swiper-button-next):not([aria-disabled="true"]):hover .is-hover { opacity: 1; }
+
+.best :is(.swiper-button-prev, .swiper-button-next):focus-visible { outline: none; }
+.best :is(.swiper-button-prev, .swiper-button-next):not([aria-disabled="true"]):focus-visible img { opacity: 0; }
+.best :is(.swiper-button-prev, .swiper-button-next):not([aria-disabled="true"]):focus-visible .is-focus { opacity: 1; }
+
+.best :is(.swiper-button-prev, .swiper-button-next)[aria-disabled="true"] { cursor: default; }
+.best :is(.swiper-button-prev, .swiper-button-next)[aria-disabled="true"] img { opacity: 0; }
+.best :is(.swiper-button-prev, .swiper-button-next)[aria-disabled="true"] .is-disabled { opacity: 1; }
+/* disabled + keyboard focus: keep the focus ring (button/stroke/focus, 1px, 3px outside) */
+.best :is(.swiper-button-prev, .swiper-button-next)[aria-disabled="true"]:focus-visible {
+  outline: var(--scale-1) solid var(--button-stroke-focus);
+  outline-offset: var(--scale-2);
+}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VOIDEN — 2026 AUTUMN COLLECTION</title>
+  <meta name="description" content="VOIDEN 2026 가을 컬렉션 — 신상품, 베스트, 룩북과 스타일 피드.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/intro.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/editorial.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <!-- Intro film: shown on entry, closed with X / HOME / Esc / end of film -->
+  <div class="intro" id="intro" role="dialog" aria-modal="true" aria-label="VOIDEN 2026 AUTUMN 광고 영상">
+    <video class="intro__video" src="media/voiden-ad-30s.mp4" autoplay muted playsinline preload="auto"></video>
+    <div class="intro__shade" aria-hidden="true"></div>
+    <div class="intro__bar">
+      <div class="intro__actions">
+        <button type="button" class="intro__btn" data-intro-sound aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4.5 4.5 0 0 1 0 6"/><path d="M18 6.5a8 8 0 0 1 0 11"/></svg>
+          <span data-label>SOUND OFF</span>
+        </button>
+        <button type="button" class="intro__btn" data-intro-home>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4l8 7"/><path d="M6 9.5V20h12V9.5"/><path d="M10 20v-5h4v5"/></svg>
+          <span>HOME</span>
+        </button>
+        <button type="button" class="intro__btn intro__btn--icon" data-intro-close aria-label="영상 닫기">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="intro__foot">
+      <img class="intro__logo" src="assets/svg/logo-voiden.svg" alt="VOIDEN" width="120" height="20">
+      <span class="intro__caption">2026 AUTUMN COLLECTION</span>
+      <div class="intro__progress" aria-hidden="true"><span></span></div>
+      <span class="intro__time">0:00 / 0:30</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <!-- @include partials/header.html -->
+    <main id="main">
+      <!-- @include partials/hero.html -->
+      <!-- @include partials/products.html -->
+      <!-- @include partials/editorial.html -->
+      <!-- @include partials/benefit.html -->
+    </main>
+    <!-- @include partials/footer.html -->
+  </div>
+
+  <script src="js/intro.js"></script>
+  <script src="js/hero-data.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/editorial.js"></script>
+</body>
+</html>

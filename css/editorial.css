@@ -1,0 +1,293 @@
+/* Editorial sections — Figma main 58:767:
+   section.inner.promotion (41:1939), section.lookbook (58:768), section.inner.style-feed (58:770).
+   Width 1200 + centering come from .inner (base.css). */
+
+/* =========================================================
+   Shared: centered section title (h2 + p.sub-title), a.more link
+   ========================================================= */
+.promotion .title,
+.lookbook .inner > .title,
+.style-feed > .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--scale-8);
+  text-align: center;
+  white-space: nowrap;
+}
+:is(.promotion, .lookbook, .style-feed) h2 { color: var(--body-default); }
+:is(.promotion, .lookbook, .style-feed) .sub-title { color: var(--body-description); }
+
+/* a.more — link size=md: label (Body-md/line/regular) + chev-18 right, gap 5 */
+:is(.lookbook, .style-feed) .more {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--body-default);
+  white-space: nowrap;
+}
+:is(.lookbook, .style-feed) .more img {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+:is(.lookbook, .style-feed) .more:hover span {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+:is(.lookbook, .style-feed) .more:hover img { transform: translateX(2px); }
+
+/* Shared photo tile behaviour: clipped, image scales 1.03 on hover */
+:is(.promotion, .lookbook, .style-feed) :is(.th-large, .th-small, .th-medium) {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  isolation: isolate; /* keeps the rounded clip while the image scales */
+}
+:is(.promotion, .lookbook, .style-feed) :is(.th-large, .th-small, .th-medium) img {
+  max-width: none;
+  transition: scale 0.4s ease;
+}
+.promotion .promotion-item:hover .th-large img,
+.lookbook a.th-large:hover img,
+.lookbook .item:hover .th-small img,
+.style-feed .th-medium:hover img { scale: 1.03; }
+
+/* Stretched card links: the name link covers the whole card */
+:is(.promotion .promotion-item, .lookbook .item) { position: relative; }
+:is(.promotion .name, .lookbook .item .name) a { color: inherit; }
+:is(.promotion .name, .lookbook .item .name) a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+/* keyboard focus ring on the image tile; without :has() base.css's outline stays on the link text */
+@supports selector(:has(*)) {
+  :is(.promotion .name, .lookbook .item .name) a:focus-visible { outline: none; }
+  .promotion .promotion-item:has(.name a:focus-visible) .th-large,
+  .lookbook .item:has(.name a:focus-visible) .th-small {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+/* CROP image fills: image is tile-wide, shifted up by 2% of its own height
+   (Figma imageTransform [0, h, 0.02]); scale origin = tile centre */
+:is(.promotion, .lookbook) .th-large img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  translate: 0 -2%;
+  transform-origin: 50% calc(294px + 2%);
+}
+
+/* =========================================================
+   section.inner.promotion — title + 2 x 588 cards, pb 128
+   ========================================================= */
+.promotion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--scale-24);
+  padding-bottom: var(--scale-128);
+}
+.promotion .title-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.promotion .promotion-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+.promotion .item-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+.promotion .promotion-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--scale-12);
+  flex-shrink: 0;
+  width: 588px;
+}
+/* .th-large — 588 x 588, radius scale/36 */
+.promotion .th-large {
+  flex-shrink: 0;
+  width: 588px;
+  height: 588px;
+  border-radius: var(--scale-36);
+}
+/* span.badge — badge size=big, type=capsule, color=primary, style=filled; left/top 24 */
+.promotion .badge {
+  position: absolute;
+  top: var(--scale-24);
+  left: var(--scale-24);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px var(--scale-8);
+  border-radius: 14px;
+  background: var(--color-primary);
+  color: var(--on-color-text);
+  white-space: nowrap;
+}
+.promotion .product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--scale-8);
+  width: 100%;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+.promotion .name { width: 100%; color: var(--body-default); }
+.promotion .period { width: 100%; color: var(--body-description); }
+.promotion .price-group {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--scale-8);
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.promotion .sale { color: var(--body-rate); }
+.promotion .price { color: var(--body-default); }
+
+/* =========================================================
+   section.lookbook — full-bleed main/50 tint, .inner py 96, gap 40
+   ========================================================= */
+.lookbook {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: var(--main-50); /* Figma variable main/50 (#f3f0ff) */
+}
+.lookbook .inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--scale-40);
+  padding-block: var(--scale-96);
+}
+.lookbook .inner > .title { width: 100%; }
+.lookbook .lookbook-content {
+  display: flex;
+  align-items: center;
+  gap: var(--scale-24);
+  width: 100%;
+}
+/* .th-large — 588 x 588, radius scale/36 (link to the look) */
+.lookbook .th-large {
+  flex-shrink: 0;
+  width: 588px;
+  height: 588px;
+  border-radius: var(--scale-36);
+}
+.lookbook .lookbook-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--scale-24);
+  flex-shrink: 0;
+  width: 588px;
+}
+.lookbook .lookbook-info .label { color: var(--color-primary); white-space: nowrap; }
+.lookbook .lookbook-info .title { color: var(--body-default); white-space: nowrap; }
+.lookbook .lookbook-info .desc {
+  width: 100%;
+  color: var(--body-description);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+/* ul.item-list — 4 x 135 items, gap 16 */
+.lookbook .item-list {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--scale-16);
+  width: 100%;
+}
+.lookbook .item {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--scale-8);
+  min-width: 1px;
+}
+/* .th-small — 135 high, white, radius scale/8; cutout centred in its Figma box */
+.lookbook .th-small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 135px;
+  border-radius: var(--scale-8);
+  background: var(--surface-white);
+}
+.lookbook .th-small img {
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.lookbook .item .name {
+  width: 100%;
+  color: var(--body-link);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+.lookbook .item .price { color: var(--body-default); white-space: nowrap; }
+
+/* =========================================================
+   section.inner.style-feed — py 128, gap 32, 4 x 282 portrait tiles
+   ========================================================= */
+.style-feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--scale-32);
+  padding-block: var(--scale-128);
+}
+.style-feed > .title { width: 100%; }
+.style-feed .feed-list {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--scale-24);
+  width: 100%;
+}
+.style-feed .feed-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--scale-12);
+  flex-shrink: 0;
+  width: 282px;
+}
+/* .th-medium — 282 x 423 (2:3), radius scale/16; FILL image = cover, full body visible */
+.style-feed .th-medium {
+  flex-shrink: 0;
+  width: 282px;
+  height: 423px;
+  border-radius: var(--scale-16);
+}
+.style-feed .th-medium img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.style-feed .tag {
+  width: 100%;
+  color: var(--body-link);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}

@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="1282" height="1087" viewBox="0 0 1282 1087" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="halo-blob" filter="url(#filter0_f_0_40)">
+<ellipse cx="641" cy="543.5" rx="455" ry="357.5" fill="#D8CDFF"/>
+</g>
+<defs>
+<filter id="filter0_f_0_40" x="0" y="0" width="1282" height="1087" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="93" result="effect1_foregroundBlur_0_40"/>
+</filter>
+</defs>
+</svg>

@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="2700" height="54" viewBox="0 0 2700 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="ribbon" clip-path="url(#clip0_0_18)">
+<rect width="2700" height="54" fill="black"/>
+<line id="Line" x1="-27" x2="2727" stroke="white" stroke-width="27" stroke-dasharray="27 27"/>
+<line id="Line_2" y1="27" x2="2754" y2="27" stroke="white" stroke-width="27" stroke-dasharray="27 27"/>
+</g>
+<defs>
+<clipPath id="clip0_0_18">
+<rect width="2700" height="54" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,25 @@
+<!-- HERO · editorial look slider (Figma 45:728 section.hero). Slides are rendered by js/hero.js from window.VOIDEN_HERO_SLIDES. -->
+<section class="hero" id="hero" aria-label="2026 AUTUMN 룩북">
+  <div class="hero-swiper" tabindex="0" role="region" aria-roledescription="carousel" aria-label="VOIDEN 2026 AUTUMN 룩 18개 · 좌우 방향키로 이동">
+    <div class="swiper">
+      <ul class="swiper-wrapper" aria-live="off" data-hero-track></ul>
+    </div>
+
+    <button type="button" class="swiper-button-prev" aria-label="이전 룩" data-hero-prev>
+      <img src="assets/icons/hero/chevron-left.svg" width="72" height="72" alt="">
+    </button>
+    <button type="button" class="swiper-button-next" aria-label="다음 룩" data-hero-next>
+      <img src="assets/icons/hero/chevron-right.svg" width="72" height="72" alt="">
+    </button>
+
+    <p class="swiper-pagination" aria-hidden="true">
+      <span class="current text-body-md-semibold" data-hero-current>1</span>
+      <span class="slash text-body-md-regular">/</span>
+      <span class="total text-body-md-regular" data-hero-total>18</span>
+    </p>
+    <p class="sr-only" aria-live="polite" data-hero-status></p>
+
+    <!-- SVG alpha masks for the body silhouettes when the page is opened from file:// (CSS url(*.png) masks are CORS-blocked there) -->
+    <svg class="hero-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs data-hero-defs></defs></svg>
+  </div>
+</section>

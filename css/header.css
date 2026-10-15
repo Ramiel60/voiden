@@ -1,0 +1,164 @@
+/* Site header — Figma 155:1094 ("header"), PC state.
+   Sits at the top of the page flow (the intro film is a separate overlay). */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  padding-inline: var(--layout-margin);
+  background: var(--surface-white);
+  border-bottom: var(--scale-1) solid var(--border-default);
+}
+
+.header .inner {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--scale-12);
+  padding-bottom: var(--scale-8);
+}
+
+/* ---------- top row: logo + search / util ---------- */
+.header .header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--scale-40);
+}
+.header .logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.header .logo a {
+  display: flex;
+  align-items: center;
+}
+
+/* form.search — "text filed / size=medium": 346 x 49, 1px inside stroke, radius 8 */
+.header .search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 346px;
+  height: 49px;
+  padding: 0 calc(var(--scale-16) - var(--scale-1));
+  border: var(--scale-1) solid var(--border-default);
+  border-radius: var(--scale-8);
+  background: transparent;
+  transition: border-color 0.2s ease;
+}
+.header .search:hover,
+.header .search:focus-within { border-color: var(--border-hover); } /* state=focus */
+.header .text-field {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  min-width: 0;
+}
+.header .text-field input {
+  width: 100%;
+  margin: 0;
+  padding: var(--scale-12) 0;
+  border: 0;
+  background: transparent;
+  color: var(--body-default);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.header .text-field input::placeholder { color: var(--body-placeholder); opacity: 1; }
+.header .text-field input::-webkit-search-decoration,
+.header .text-field input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+/* Search / style=micro: 20 x 20 glyph centred in a 24 x 24 slot */
+.header .search-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--scale-24);
+  height: var(--scale-24);
+}
+
+/* ul.util */
+.header .util {
+  display: flex;
+  align-items: center;
+  gap: var(--scale-24);
+}
+.header .util a {
+  display: block;
+  color: var(--body-default);
+  white-space: nowrap;
+  text-underline-offset: 3px;
+}
+.header .util a:hover { text-decoration: underline; }
+
+/* ---------- bottom row: GNB / my menu ---------- */
+.header .header-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--scale-8);
+}
+.header .gnb {
+  display: flex;
+  align-items: center;
+  gap: var(--scale-32);
+}
+.header .gnb-main,
+.header .gnb-sub {
+  display: flex;
+  align-items: center;
+  gap: 29px;
+}
+.header .divider {
+  display: block;
+  flex-shrink: 0;
+  width: var(--scale-1);
+  height: var(--scale-12);
+  background: var(--border-default);
+}
+
+/* tab — state=default / state=active (2px inside bottom stroke) */
+.header .tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 26px; /* Figma tab box: 23px text row + 3px bottom padding */
+  padding-bottom: 3px;
+  color: var(--body-description);
+  white-space: nowrap;
+  box-shadow: inset 0 calc(-1 * var(--scale-2)) 0 transparent;
+  transition: color 0.2s ease, box-shadow 0.2s ease;
+}
+.header .tab:hover { color: var(--body-default); }
+.header .tab.is-active {
+  color: var(--body-default);
+  box-shadow: inset 0 calc(-1 * var(--scale-2)) 0 var(--button-stroke-focus);
+}
+
+/* ul.my-menu — 24px icons (header/icon size), 20px gap */
+.header .my-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--scale-20);
+}
+.header .my-menu li {
+  display: flex;
+  width: var(--scale-24);
+}
+.header .my-menu a,
+.header .my-menu button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--scale-24);
+  height: var(--scale-24);
+  transition: opacity 0.2s ease;
+}
+.header .my-menu a:hover,
+.header .my-menu button:hover { opacity: 0.7; }

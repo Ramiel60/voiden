@@ -1,0 +1,176 @@
+/* Benefit band (Figma 58:771 "section.benefit") + page footer (Figma 146:1757 "footer"), PC. */
+
+/* ---------- section.benefit — full-bleed gray band, 4 equal benefit items ---------- */
+.benefit {
+  width: 100%;
+  background: var(--gray-150);
+}
+.benefit .inner {
+  padding-block: var(--scale-56);
+}
+.benefit .benefit-list {
+  display: flex;
+  align-items: center;
+  gap: var(--scale-24);
+}
+/* li.benefit-item: flex 1 (282px at 1200), 56 icon tile + text */
+.benefit .benefit-item {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  gap: var(--scale-16);
+  min-width: 0;
+}
+/* .icon: 56 round white tile, 24px outlined glyph centred */
+.benefit .icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--scale-56);
+  height: var(--scale-56);
+  border-radius: var(--scale-64);
+  background: var(--surface-white);
+}
+.benefit .benefit-text {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--scale-4);
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+.benefit .title {
+  display: block;
+  color: var(--body-default);
+}
+.benefit .desc {
+  color: var(--body-description);
+}
+
+/* ---------- footer — dark full-bleed band ---------- */
+.footer {
+  width: 100%;
+  padding-inline: var(--layout-margin);
+  background: var(--gray-1000);
+}
+.footer :focus-visible {
+  outline-color: var(--on-color-text);
+}
+.footer .inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--scale-32);
+  padding-block: var(--scale-64);
+}
+
+/* .footer-top: logo | menu, 2px bottom rule (border-hover), 32 below the row */
+.footer .footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--scale-32);
+  border-bottom: var(--scale-2) solid var(--border-hover);
+}
+.footer .footer-logo,
+.footer .footer-logo a {
+  display: flex;
+  align-items: center;
+}
+.footer .footer-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--scale-24);
+  white-space: nowrap;
+}
+.footer .footer-menu a {
+  color: var(--gray-500);
+  transition: color 0.2s ease;
+}
+.footer .footer-menu a:hover,
+.footer .footer-menu a:focus-visible,
+.footer .footer-menu a.is-emphasis {
+  color: var(--on-color-text);
+}
+
+/* .footer-main: company info (left) | customer center (right, end-aligned) */
+.footer .footer-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+.footer .footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--scale-8);
+  font-style: normal;
+  color: var(--gray-500);
+}
+.footer .footer-info a {
+  color: inherit;
+  transition: color 0.2s ease;
+}
+.footer .footer-info a:hover {
+  color: var(--on-color-text);
+}
+.footer .footer-cs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--scale-8);
+  text-align: right;
+}
+.footer .footer-cs p {
+  color: var(--gray-500);
+}
+.footer .footer-cs .title,
+.footer .footer-cs .tel {
+  color: var(--on-color-text);
+}
+.footer .footer-cs .tel {
+  display: block;
+}
+.footer .footer-cs .tel a {
+  color: inherit;
+}
+
+/* .footer-bottom: copyright | SNS round buttons */
+.footer .footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer .copyright {
+  color: var(--gray-600);
+  white-space: nowrap;
+}
+.footer .footer-sns {
+  display: flex;
+  align-items: center;
+  gap: var(--scale-12);
+}
+.footer .footer-sns li {
+  display: flex;
+}
+/* a.sns-*: 44 round gray-800 tile, 20px white glyph centred */
+.footer .footer-sns a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--scale-64);
+  background: var(--gray-800);
+  overflow: hidden;
+  transition: background-color 0.2s ease;
+}
+.footer .footer-sns a:hover,
+.footer .footer-sns a:focus-visible {
+  background: var(--gray-700);
+}
+.footer .footer-sns img {
+  flex-shrink: 0;
+}
